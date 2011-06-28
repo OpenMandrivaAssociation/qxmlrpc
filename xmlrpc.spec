@@ -1,6 +1,6 @@
 %define name    qxmlrpc
 %define version 1
-%define release 0
+%define release 1
 %define buildroot %{_tmppath}/%{name}-buildroot
 
 BuildRoot:      %{buildroot}
@@ -9,7 +9,7 @@ Name:           %{name}
 Version:        %{version}
 Release:        %{release}
 License:        GPL-3
-Group:          Network
+Group:          System/Libraries
 Source0:        %{name}-%{version}.tar.bz2
 
 %description
