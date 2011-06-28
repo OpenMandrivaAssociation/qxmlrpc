@@ -1,9 +1,10 @@
 %define name    qxmlrpc
 %define version 1
-%define release 1
+%define release 2
 %define buildroot %{_tmppath}/%{name}-buildroot
 
 BuildRoot:      %{buildroot}
+BuildRequires: qt4-devel
 Summary:        qxmlrpc
 Name:           %{name}
 Version:        %{version}
