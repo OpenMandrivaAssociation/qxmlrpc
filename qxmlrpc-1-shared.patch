@@ -1,0 +1,11 @@
+diff -urN qxmlrpc-1/xmlrpc.pro qxmlrpc-1-patched/xmlrpc.pro
+--- qxmlrpc-1/xmlrpc.pro	2011-06-17 00:27:37.000000000 +1100
++++ qxmlrpc-1-patched/xmlrpc.pro	2012-09-07 00:54:55.486701980 +1100
+@@ -4,7 +4,6 @@
+ win32:TARGET = ../qxmlrpc
+ 
+ CONFIG += warn_on
+-CONFIG += staticlib
+ CONFIG += debug_and_release
+ CONFIG += precompile_header
+ 
