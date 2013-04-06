@@ -1,6 +1,7 @@
 %define major 1
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
+%define debug_package %{nil}
 
 Summary:	Full Qt4 based implementation of XML-RPC protocol
 Name:		qxmlrpc
