@@ -9,9 +9,12 @@ Version:	1
 Release:	9
 License:	GPLv3+
 Group:		System/Libraries
+Url:		https://code.google.com/p/qxmlrpc/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		qxmlrpc-1-shared.patch
-BuildRequires:	qt4-devel
+BuildRequires:	pkgconfig(QtCore)
+BuildRequires:	pkgconfig(QtNetwork)
+BuildRequires:	pkgconfig(QtXml)
 
 %description
 Full Qt4 based implementation of XML-RPC protocol.
@@ -44,7 +47,7 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 %qmake_qt4 xmlrpc.pro -config static -o Makefile.static
@@ -56,27 +59,9 @@ make clean -f Makefile.static
 
 %install
 mkdir -p %{buildroot}%{_libdir}
-cp libqxmlrpc.a %{buildroot}%{_libdir}/
-cp libqxmlrpc.so.%{major}.0.0 %{buildroot}%{_libdir}/
-
-pushd %{buildroot}%{_libdir}
-ln -s libqxmlrpc.so.%{major}.0.0 libqxmlrpc.so.%{major}.0
-ln -s libqxmlrpc.so.%{major}.0 libqxmlrpc.so.%{major}
-ln -s libqxmlrpc.so.%{major} libqxmlrpc.so
-popd
+cp -a libqxmlrpc.a %{buildroot}%{_libdir}/
+cp -a libqxmlrpc.so* %{buildroot}%{_libdir}/
 
 mkdir -p %{buildroot}%{_includedir}/%{name}/
 cp *.h %{buildroot}%{_includedir}/%{name}/
 
-%changelog
-* Thu Sep 06 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1-5
-- Completely recreate package according to Mandriva policy
-
-* Fri Jul 13 2012 Sergey A. Sokolov <sokol@mtik.ru> 1-4
-- devel package
-
-* Tue Jun 28 2011 Alex Burmashev <burmashev@mandriva.org> 1-2
-+ Revision: 687644
-- spec fix
-- small spec fix
-- import qxmlrpc
