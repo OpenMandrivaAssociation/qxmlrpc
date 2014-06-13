@@ -6,7 +6,7 @@
 Summary:	Full Qt4 based implementation of XML-RPC protocol
 Name:		qxmlrpc
 Version:	1
-Release:	9
+Release:	10
 License:	GPLv3+
 Group:		System/Libraries
 Url:		https://code.google.com/p/qxmlrpc/
