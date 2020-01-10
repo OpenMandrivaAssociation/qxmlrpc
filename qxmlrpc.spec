@@ -47,7 +47,7 @@ Files needed to build applications based on %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %qmake_qt4 xmlrpc.pro -config static -o Makefile.static
