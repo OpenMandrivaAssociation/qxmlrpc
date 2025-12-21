@@ -12,6 +12,7 @@ Group:		System/Libraries
 Url:		https://code.google.com/p/qxmlrpc/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		qxmlrpc-1-shared.patch
+BuildRequires:	make
 BuildRequires:	pkgconfig(QtCore)
 BuildRequires:	pkgconfig(QtNetwork)
 BuildRequires:	pkgconfig(QtXml)
